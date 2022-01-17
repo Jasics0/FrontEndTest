@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SERVI ENVIOS ;) | Envios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style type="text/css">
+        .disable {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container disable" id="table">
+
+        <table id="table-shipments">
+            <thead id="table-head">
+
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container" id="form-shipments">
+        <form method="POST" action="http://localhost:8080/envios">
+
+        </form>
+    </div>
+    <button onclick="getData()" class="btn" id="button-get">Cargar Envios</button>
+    <button onclick="getForm()" class="black btn" id="button-clear">Crear Envio</button>
+    <button onclick="getDelete()" class="red btn" id="button-delete">Eliminar Envio</button>
+
+    <div class="" id="form">
+        <div class="row">
+            <div class="col s9"  id="formSend" >
+                <div class="row">
+                    <div class="input-field col s3">
+                        <input id="typeProduct" type="number" name="typeProduct" value="" class="validate">
+                        <label for="typeProduct">Id de Producto</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="quantity" type="number" name="quantity" value="" class="validate">
+                        <label for="quantity">Cantidad</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="dateIn" type="date" name="dateIn" value="" class="validate">
+                        <label for="dateIn">Fecha de ingreso</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s3">
+                        <input id="idVehicle" type="text" name="idVehicle" value="" class="validate">
+                        <label for="idVehicle">Id Vehiculo</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="idClient" type="text" name="idClient" value="" class="validate">
+                        <label for="idClient">Id Cliente</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="idWarehouse" type="text" name="idWarehouse" value="" class="validate">
+                        <label for="idWarehouse">Id Deposito</label>
+                    </div>
+                </div>
+                <button class="btn" onclick="saveShipment()">Crear</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="disable col s9" id="delete">
+        <div class="row">
+            <div class="input-field col s3">
+                <input id="guideDelete" type="text" name="guideDelete" class="validate">
+                <label for="guideDelete">Id de Envio</label>
+            </div>
+        </div>
+        <button class="red btn" onclick="deleteData()">Eliminar</button>
+    </div>
+
+    <script src="js/envios.js"></script>
+</body>
+
+</html>

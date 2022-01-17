@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SERVI ENVIOS ;) | Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style type="text/css">
+        .disable {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container disable" id="table">
+
+        <table id="table-shipments">
+            <thead id="table-head">
+
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container" id="form-shipments">
+        <form method="POST" action="http://localhost:8080/envios">
+
+        </form>
+    </div>
+    <button onclick="getData()" class="btn" id="button-get">Cargar Productos</button>
+    <button onclick="getForm()" class="black btn" id="button-clear">Crear Producto</button>
+    <button onclick="getDelete()" class="red btn" id="button-delete">Eliminar Producto</button>
+
+    <div class="" id="form">
+        <div class="row">
+            <div class="col s9" id="formSend">
+                <div class="row">
+                    <div class="input-field col s3">
+                        <input id="name" type="text" name="name" value="" class="validate">
+                        <label for="name">Nombre</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="description" type="text" name="description" value="" class="validate">
+                        <label for="description">Descripción</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <input id="priceUnit" type="number" name="priceUnit" value="" class="validate">
+                        <label for="priceUnit">Precio</label>
+                    </div>
+                </div>
+                <button class="btn" onclick="saveShipment()">Crear</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="disable col s9" id="delete">
+        <div class="row">
+            <div class="input-field col s3">
+                <input id="idProductDelete" type="text" name="idProductDelete" class="validate">
+                <label for="idProductDelete">Id Producto</label>
+            </div>
+        </div>
+        <button class="red btn" onclick="deleteData()">Eliminar</button>
+    </div>
+    <script src="js/productos.js"></script>
+</body>
+
+</html>
